@@ -1,19 +1,29 @@
-console.log('I am JavaScript funning in your page!')
+import { films } from '/assets/films.js'
 
-let mainHeader = document.querySelector('h1')
+console.log(films[0].opening_crawl)
 
-console.log(mainHeader)
+let mainSection = document.querySelector('main')
 
-let allHeaders = document.querySelectorAll('h1')
+let film1 = document.createElement('div')
+let film2 = document.createElement('div')
+let film3 = document.createElement('div')
+let film4 = document.createElement('div')
+let film5 = document.createElement('div')
+let film6 = document.createElement('div')
+let film7 = document.createElement('div')
 
-console.log(allHeaders)
+film1.textContent = films[0].opening_crawl
+film2.textContent = films[0].opening_crawl
+film3.textContent = films[0].opening_crawl
+film4.textContent = films[0].opening_crawl
+film5.textContent = films[0].opening_crawl
+film6.textContent = films[0].opening_crawl
+film7.textContent = films[0].opening_crawl
 
-mainHeader.textContent = 'Simon Rulz'
-
-mainHeader.setAttribute("Style", "color: red; border: 1px solid blue;")
-
-let newDiv = document.createElement("div");
-newDiv.textContent = 'Here I am! A new Div!'
-
-document.querySelector('main').setAttribute("style", "background-color: #dfdfdf;")
-document.querySelector('main').appendChild(newDiv)
+mainSection.appendChild(film1)
+mainSection.appendChild(film2)
+mainSection.appendChild(film3)
+mainSection.appendChild(film4)
+mainSection.appendChild(film5)
+mainSection.appendChild(film6)
+mainSection.appendChild(film7)
