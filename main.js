@@ -11,12 +11,12 @@ films.forEach(function(film) {
    let filmCrawl = document.createElement('p')
 
    filmTitle.textContent = film.title
-   filmCrawl.textContent = film.openingCrawl
+   filmCrawl.textContent = film.opening_crawl
 
 filmDiv.appendChild(filmTitle)
 filmDiv.appendChild(filmCrawl)
 
-   mainArea.appendChild(filmDiv)
+   mainArea.appendChild(filmDiv);
 });
 
 
@@ -24,9 +24,11 @@ people.forEach((person) => {
     let personDiv = document.createElement('div')
     let name = document.createElement('h1')
     let gender = document.createElement('p')
+    let pic = document.createElement('img')
  
     name.textContent = person.name
     gender.textContent = person.gender
+    pic.src = 'https://starwars-visualguide.com/assets/'
  
  personDiv.appendChild(name)
  personDiv.appendChild(gender)
