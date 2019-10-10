@@ -34,6 +34,7 @@ people.forEach((person) => {
  
  personDiv.appendChild(name)
  personDiv.appendChild(gender)
+ personDiv.appendChild(pic)
  
     mainArea.appendChild(personDiv)
 })
