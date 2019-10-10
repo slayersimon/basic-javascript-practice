@@ -1,29 +1,35 @@
-import { films } from '/assets/films.js'
+import { films } from './assets/films.js'
+import { people } from './assets/people.js'
 
-console.log(films[0].opening_crawl)
+console.log('I am JavaScript running in your page!')
 
-let mainSection = document.querySelector('main')
+let mainArea = document.querySelector('main')
 
-let film1 = document.createElement('div')
-let film2 = document.createElement('div')
-let film3 = document.createElement('div')
-let film4 = document.createElement('div')
-let film5 = document.createElement('div')
-let film6 = document.createElement('div')
-let film7 = document.createElement('div')
+films.forEach(function(film) {
+   let filmDiv = document.createElement('div')
+   let filmTitle = document.createElement('h1')
+   let filmCrawl = document.createElement('p')
 
-film1.textContent = films[0].opening_crawl
-film2.textContent = films[0].opening_crawl
-film3.textContent = films[0].opening_crawl
-film4.textContent = films[0].opening_crawl
-film5.textContent = films[0].opening_crawl
-film6.textContent = films[0].opening_crawl
-film7.textContent = films[0].opening_crawl
+   filmTitle.textContent = film.title
+   filmCrawl.textContent = film.openingCrawl
 
-mainSection.appendChild(film1)
-mainSection.appendChild(film2)
-mainSection.appendChild(film3)
-mainSection.appendChild(film4)
-mainSection.appendChild(film5)
-mainSection.appendChild(film6)
-mainSection.appendChild(film7)
+filmDiv.appendChild(filmTitle)
+filmDiv.appendChild(filmCrawl)
+
+   mainArea.appendChild(filmDiv)
+});
+
+
+people.forEach((person) => {
+    let personDiv = document.createElement('div')
+    let name = document.createElement('h1')
+    let gender = document.createElement('p')
+ 
+    name.textContent = person.name
+    gender.textContent = person.gender
+ 
+ personDiv.appendChild(name)
+ personDiv.appendChild(gender)
+ 
+    mainArea.appendChild(personDiv)
+})
