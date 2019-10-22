@@ -55,3 +55,19 @@ const maleCharacters = people.filter(person => person.gender === 'female')
 /* command + f brings up a search thing, check boxes to limit items to search words. ex: "male" to find if the gender is male*/
 console.log(maleCharacters)
 console.log(femaleCharacters)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
