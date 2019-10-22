@@ -78,6 +78,7 @@ mainHeader.appendChild(femaleButton)
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 const maleCharacters = people.filter(person => person.gender === 'female')
+const otherCharacters = people.filter(person => person.gender !=== 'female' && person.gender !=== 'male')
 
 /* command + f brings up a search thing, check boxes to limit items to search words. ex: "male" to find if the gender is male*/
 console.log(maleCharacters)
