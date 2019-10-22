@@ -1,11 +1,11 @@
-import { films } from './assets/films.js'
-import { people } from './assets/people.js'
+import { films } from '../assets/films.js'
+import { people } from '../assets/people.js'
 
 console.log('I am JavaScript running in your page!')
 
 let mainArea = document.querySelector('main')
 
-films.forEach(function(film) {
+/* films.forEach(function(film) {
    let filmDiv = document.createElement('div')
    let filmTitle = document.createElement('h1')
    let filmCrawl = document.createElement('p')
@@ -17,7 +17,7 @@ filmDiv.appendChild(filmTitle)
 filmDiv.appendChild(filmCrawl)
 
    mainArea.appendChild(filmDiv);
-});
+}); */
 
 
 people.forEach((person) => {
@@ -55,13 +55,6 @@ const maleCharacters = people.filter(person => person.gender === 'female')
 /* command + f brings up a search thing, check boxes to limit items to search words. ex: "male" to find if the gender is male*/
 console.log(maleCharacters)
 console.log(femaleCharacters)
-
-
-
-
-
-
-
 
 
 
