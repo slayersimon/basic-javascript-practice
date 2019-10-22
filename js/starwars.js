@@ -49,6 +49,14 @@ function getCharNumber(charURL) {
     }
 }
 
+const mainHeader = document.querySelector('header')
+let maleButton = document.createElement('button')
+maleButton.textContent = 'Male Characters'
+let femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+
+
+
 const maleCharacters = people.filter(person => person.gender === 'male')
 const maleCharacters = people.filter(person => person.gender === 'female')
 
