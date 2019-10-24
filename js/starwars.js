@@ -5,7 +5,7 @@ console.log('I am JavaScript running in your page!')
 
 let mainArea = document.querySelector('main')
 
-/* films.forEach(function(film) {
+films.forEach(function(film) {
    let filmDiv = document.createElement('div')
    let filmTitle = document.createElement('h1')
    let filmCrawl = document.createElement('p')
@@ -17,7 +17,8 @@ filmDiv.appendChild(filmTitle)
 filmDiv.appendChild(filmCrawl)
 
    mainArea.appendChild(filmDiv);
-}); */
+}); 
+mainArea.appendChild
 
 
 people.forEach((person) => {
@@ -77,8 +78,8 @@ mainHeader.appendChild(femaleButton)
 
 
 const maleCharacters = people.filter(person => person.gender === 'male')
-const maleCharacters = people.filter(person => person.gender === 'female')
-const otherCharacters = people.filter(person => person.gender !=== 'female' && person.gender !=== 'male')
+const femaleCharacters = people.filter(person => person.gender === 'female')
+const otherCharacters = people.filter(person => person.gender !== 'female' && person.gender !== 'male')
 
 /* command + f brings up a search thing, check boxes to limit items to search words. ex: "male" to find if the gender is male*/
 console.log(maleCharacters)
