@@ -7,10 +7,16 @@ planets.forEach(planet => {
     let planetName = document.createElement('h3')
     let planetPic = document.createElement('img')
 
-    let planetNum = getCharNumber
+    let planetNum = getCharNumber(planet.url)
 
     planetName.textContent = planet.name
     planetPic.src = `https://starwars-visualguide.com/assets/img/characters/${planetNum}.jpg`
+
+    planetPic.addEventListener('error', (event) => {
+        let badImage = event.target
+        badImage.src = '../images/starwarsposter.png'
+    })
+
     planetDiv.appendChild(planetName)
     planetDiv.appendChild(planetPic)
 
