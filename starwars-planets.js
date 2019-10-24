@@ -12,9 +12,9 @@ planets.forEach(planet => {
     planetName.textContent = planet.name
     planetPic.src = `https://starwars-visualguide.com/assets/img/characters/${planetNum}.jpg`
 
-    planetPic.addEventListener('error', (event) => {
+    planetPic.addEventListener('error', (event) => { 
         let badImage = event.target
-        badImage.src = '../images/starwarsposter.png'
+        badImage.src = '../images/starwarsposter.png' //placeholder for unfound images
     })
 
     planetDiv.appendChild(planetName)

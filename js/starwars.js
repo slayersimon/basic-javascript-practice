@@ -22,10 +22,10 @@ mainArea.appendChild
 
 
 people.forEach((person) => {
-    let personDiv = document.createElement('div')
+    let personDiv = document.createElement('div', 'charDiv')
     let name = document.createElement('h3')
     let gender = document.createElement('p')
-    let pic = document.createElement('img')
+    let pic = document.createElement('img', 'picDiv')
 
     let charNum = getCharNumber(person.url)
  
@@ -38,6 +38,8 @@ people.forEach((person) => {
  personDiv.appendChild(pic)
  
     mainArea.appendChild(personDiv)
+
+    personDiv.setAttribute('class', 'charDiv')
 })
 
 function getCharNumber(charURL) {
@@ -55,22 +57,30 @@ console.log(allDivs)
 const mainHeader = document.querySelector('header')
 let maleButton = document.createElement('button')
 maleButton.textContent = 'Male Characters'
+
+
 maleButton.addEventListener('click', () => {
     let matchedDiv = allDivs.findIndex((oneDiv) => {
         femaleCharacters.forEach(character => {
         return oneDiv.firstChild.textContent === character.name
         })
-        matchedDivelt.setAttribute("style", "display: none;")
+       /* if(matchedDiv.getAttribute('style') === "display: none;") {
+            matchedDiv[0].setAttribute("style", "display: revert;")
+} */
+    matchedDiv[0].setAttribute("style", "display: none;")
     })
 })
+
+
+
 let femaleButton = document.createElement('button')
 femaleButton.textContent = 'Female Characters'
-maleButton.addEventListener('click', () => {
+femaleButton.addEventListener('click', () => {
     let matchedDiv = allDivs.findIndex((oneDiv) => {
         maleCharacters.forEach(character => {
         return oneDiv.firstChild.textContent === character.name
         })
-        matchedDivelt.setAttribute("style", "display: none;")
+        matchedDiv.setAttribute("style", "display: revert;")
     })
 })
 mainHeader.appendChild(maleButton)
