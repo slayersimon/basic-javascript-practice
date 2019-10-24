@@ -23,14 +23,14 @@ mainArea.appendChild
 
 people.forEach((person) => {
     let personDiv = document.createElement('div')
-    let name = document.createElement('h1')
+    let name = document.createElement('h3')
     let gender = document.createElement('p')
     let pic = document.createElement('img')
 
     let charNum = getCharNumber(person.url)
  
     name.textContent = person.name
-    gender.textContent = person.gender
+    gender.textContent = `Gender: ${person.gender}`
     pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
  
  personDiv.appendChild(name)

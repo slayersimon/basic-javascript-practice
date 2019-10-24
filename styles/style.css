@@ -5,6 +5,7 @@ h1 {
 header {
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 main {
@@ -24,4 +25,21 @@ button {
     background-color: bisque;
     justify-content: center;
     margin-left: 20px;
+}
+
+h3, p {
+    margin: 0;
+}
+
+.picDivs {
+    width: 160px;
+}
+
+.charDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%px;
+    border: 1px solid #1212be;
+    padding: 6px;
 }
