@@ -9,33 +9,45 @@ try {
     const response = await fetch(url)
     const data = await response.json()
     console.log(data)
+    populateDOM(data.results)
 } catch (error) {
     console.error(error)
 }
 }
 
-const data = getPokemonData('https://pokeapi.co/api/v2/pokemon')
+getPokemonData('https://pokeapi.co/api/v2/pokemon')
 
+
+let mainArea = document.querySelector('main')
 
 function populateDOM(pokeArray) {
 pokeArray.forEach((pokemon) => {
-    let personDiv = document.createElement('div', 'charDiv')
+    console.log(pokemon)
+    let pokeDiv = document.createElement('div', 'charDiv')
     let name = document.createElement('h3')
     let gender = document.createElement('p')
     let pic = document.createElement('img', 'picDiv')
 
-    /*let charNum = getCharNumber(person.url)*/
+    /*let pokenum = getPokeNumber(pokemon.url)*/
  
     name.textContent = person.name
-    gender.textContent = `Gender: ${person.gender}`
-    pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+
+    pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
 
     personDiv.appendChild(name)
-    personDiv.appendChild(gender)
     personDiv.appendChild(pic)
     
-       mainArea.appendChild(personDiv)
-   
-       personDiv.setAttribute('class', 'charDiv')
+       mainArea.appendChild(pokeDiv)
+
 })
-   }
+}
+
+function getPokeNumber(charURL) {
+    let end = charURL.lastIndexOf('/')
+    let charID = charURL.substring(end -2, end)
+    if(charID.indexOf('/') !== -1 ){
+        return `00${charID.slice(1,2)}`
+    } else {
+      return `0${charID}`
+    }
+}
