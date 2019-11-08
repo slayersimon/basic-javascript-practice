@@ -6,7 +6,7 @@ return await response.json()
 
 async function getPokemonData(url) {
 try {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon')
+    const response = await fetch(url)
     const data = await response.json()
     console.log(data)
 } catch (error) {
@@ -37,4 +37,5 @@ pokeArray.forEach((pokemon) => {
        mainArea.appendChild(personDiv)
    
        personDiv.setAttribute('class', 'charDiv')
+})
    }
