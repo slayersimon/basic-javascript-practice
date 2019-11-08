@@ -6,11 +6,11 @@ return await response.json()
 
 async function getPokemonData(url) {
 try {
-    const response = await getPokemonData()
-    const data = await Response.json()
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon')
+    const data = await response.json()
     console.log(data)
 } catch (error) {
-    console.log(error)
+    console.error(error)
 }
 }
 
