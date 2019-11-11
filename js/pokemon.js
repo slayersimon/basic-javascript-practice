@@ -29,11 +29,15 @@ let mainArea = document.querySelector('main')
 
 
 function populateDOM(Single_pokemon) {
-    let pokeDiv = document.createElement('div')
+    let pokeScene = document.createElement('div')
+    let pokeCard = document.createElement('div')
+    let pokeFront = document.createElement('div')
+    let pokeBack = document.createElement('div')
     let name = document.createElement('h3')
     let pic = document.createElement('img')
 
-    pokeDiv.setAttribute('class', 'charDivs')
+    pokeFront.setAttribute('class', 'card_face card_face--front')
+    pokeBack.setAttribute('class', 'card_face card_face--back')
     pic.setAttribute('class', 'picDivs')
 
     let pokeNum = getPokeNumber(single_pokemon.id)
@@ -42,20 +46,24 @@ function populateDOM(Single_pokemon) {
    
 
     pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
+    pokeFront.appendChild(pic)
+    pokeFront.appendChild(name)
 
-    pokeDiv.appendChild(pic)
-    pokeDiv.appendChild(name)
 
-    mainArea.appendChild(pokeDiv)
+    pokeCard.appendChild(pokeFront)
+    pokeCard.appendChild(pokeback)
+    pokeScene.appendChild(pokeCard)
+ 
+    mainArea.appendChild(pokeScene)
 
 }
 
-<div class="scene">\
+/*<div class="scene">\
     <div class="card">
         <div class="card_face card_face--front">front</div>
         <div class="card_face card_face--back">back</div>
     </div>
-</div>
+</div>*/
 
 function getPokeNumber(id) {
     if(id < 10) return `00${id}`
