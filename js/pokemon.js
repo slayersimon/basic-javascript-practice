@@ -4,18 +4,25 @@ const response = await fetch(url)
 return await response.json()
 }*/
 
-async function getPokemonData(url) {
+async function getAPIData(url) {
 try {
     const response = await fetch(url)
     const data = await response.json()
-    console.log(data)
-    populateDOM(data.results)
+    return data
 } catch (error) {
     console.error(error)
 }
 }
 
-getPokemonData('https://pokeapi.co/api/v2/pokemon')
+//now use the reutrned async data
+const theData = getAPIData('https://pokeapi.co/api/v2/pokemon')
+.then(data => {
+    for (const pokemon of data.results) {
+        console.log(pokemon);
+    }
+})
+
+console.log(theData)
 
 
 let mainArea = document.querySelector('main')
