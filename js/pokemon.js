@@ -1,9 +1,4 @@
 
-/*async function getPokemonData(url) {
-const response = await fetch(url)
-return await response.json()
-}*/
-
 async function getAPIData(url) {
 try {
     const response = await fetch(url)
@@ -28,13 +23,15 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon')
 let mainArea = document.querySelector('main')
 
 
-function populateDOM(Single_pokemon) {
+function populateDOM(single_pokemon) {
     let pokeScene = document.createElement('div')
     let pokeCard = document.createElement('div')
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
     let name = document.createElement('h3')
     let pic = document.createElement('img')
+
+    fillCardBack(pokeBack, single_pokemon)
 
 
     pokeScene.setAttribute('class', 'scene')
@@ -55,15 +52,26 @@ function populateDOM(Single_pokemon) {
 
 
     pokeCard.appendChild(pokeFront)
-    pokeCard.appendChild(pokeback)
+    pokeCard.appendChild(pokeBack)
     pokeScene.appendChild(pokeCard)
  
     mainArea.appendChild(pokeScene)
 
-    card.addEventListener( 'click', function() {
+    pokeCard.addEventListener( 'click', function() {
         card.classList.toggle('is-flipped');
       });
 }
+
+
+function fillCardBack(pokeBack, data) {
+    let pokeOrder = document.createElement('p')
+    let pokeHP = document.createElement('h5')
+    pokeOrder.textContent = data.order 
+    pokeHP.textContent = data.stats[0].base_stat
+    pokeBack.appendChild(pokeOrder)
+    pokeBack.appendChild(pokeHP)
+}
+
 
 /*<div class="scene">\
     <div class="card">
