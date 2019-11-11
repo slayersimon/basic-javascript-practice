@@ -53,10 +53,10 @@ function cardContent(senator) {
     mediaContent.setAttribute('class', 'media-content')
     let titleP = document.createElement('p')
     titleP.setAttribute('class', 'title is-4')
-    titleP.textContent = `foo`
+    titleP.textContent = `${senator.first_name} ${senator.last_name}`
     let subtitleP = document.createElement('p')
     subtitleP.setAttribute('class', 'subtitle is-6')
-    subtitleP.textContent = 'bar' 
+    subtitleP.textContent = `${senator.state_rank}`
 
     mediaContent.appendChild(titleP)
     mediaContent.appendChild(subtitleP)
