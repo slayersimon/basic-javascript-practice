@@ -19,14 +19,11 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon')
 .then(data => {
     for (const pokemon of data.results) {
         getAPIData(pokemon.url)
-        .then(pokeData => {
-           populateDOM(pokeData)
+        .then(pokedata => {
+           populateDOM(pokedata)
         })
     }
 })
-
-console.log(theData)
-
 
 let mainArea = document.querySelector('main')
 
@@ -52,6 +49,13 @@ function populateDOM(Single_pokemon) {
     mainArea.appendChild(pokeDiv)
 
 }
+
+<div class="scene">\
+    <div class="card">
+        <div class="card_face card_face--front">front</div>
+        <div class="card_face card_face--back">back</div>
+    </div>
+</div>
 
 function getPokeNumber(id) {
     if(id < 10) return `00${id}`

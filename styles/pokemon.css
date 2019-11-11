@@ -7,3 +7,13 @@ main {
     margin: 0 auto;
     margin-bottom: 6rem;
 }
+
+.picDivs {
+    width: 100%
+}
+
+.charDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
