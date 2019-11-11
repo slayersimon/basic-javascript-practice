@@ -36,14 +36,18 @@ function populateDOM(Single_pokemon) {
     let name = document.createElement('h3')
     let pic = document.createElement('img')
 
-    pokeFront.setAttribute('class', 'card_face card_face--front')
+
+    pokeScene.setAttribute('class', 'scene')
+    pokeCard.setAttribute('class', 'card')
+    pokeFront.setAttribute('charDivs', 'class', 'card_face card_face--front')
     pokeBack.setAttribute('class', 'card_face card_face--back')
     pic.setAttribute('class', 'picDivs')
+
 
     let pokeNum = getPokeNumber(single_pokemon.id)
  
     name.textContent = `${single_pokemon.name} height: ${single_pokemon.height}`
-   
+    pokeFront.appendChild(name)
 
     pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
     pokeFront.appendChild(pic)
@@ -56,6 +60,9 @@ function populateDOM(Single_pokemon) {
  
     mainArea.appendChild(pokeScene)
 
+    card.addEventListener( 'click', function() {
+        card.classList.toggle('is-flipped');
+      });
 }
 
 /*<div class="scene">\
