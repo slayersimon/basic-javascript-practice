@@ -28,27 +28,14 @@ function populateDOM(single_pokemon) {
     let pokeCard = document.createElement('div')
     let pokeFront = document.createElement('div')
     let pokeBack = document.createElement('div')
-    let name = document.createElement('h3')
-    let pic = document.createElement('img')
 
+
+    fillCardFront(pokeFront, single_pokemon)
     fillCardBack(pokeBack, single_pokemon)
 
 
     pokeScene.setAttribute('class', 'scene')
     pokeCard.setAttribute('class', 'card')
-    pokeFront.setAttribute('charDivs', 'class', 'card_face card_face--front')
-    pokeBack.setAttribute('class', 'card_face card_face--back')
-    pic.setAttribute('class', 'picDivs')
-
-
-    let pokeNum = getPokeNumber(single_pokemon.id)
- 
-    name.textContent = `${single_pokemon.name} height: ${single_pokemon.height}`
-    pokeFront.appendChild(name)
-
-    pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
-    pokeFront.appendChild(pic)
-    pokeFront.appendChild(name)
 
 
     pokeCard.appendChild(pokeFront)
@@ -63,7 +50,24 @@ function populateDOM(single_pokemon) {
 }
 
 
+function fillCardFront(pokeFront, data) {
+    pokeFront.setAttribute('class', 'card_face card_face--front')
+    let name = document.createElement('h3')
+    let pic = document.createElement('img')
+    pic.setAttribute('class', 'picDivs')
+    let pokeNum = getPokeNumber(data.id)
+    pokeFront.appendChild(name)
+    name.textContent = `${data.name} height: ${data.height}`
+
+    pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
+
+        
+    pokeFront.appendChild(pic)
+    pokeFront.appendChild(name)
+}
+
 function fillCardBack(pokeBack, data) {
+    pokeBack.setAttribute('class', 'card_face card_face--back')
     let pokeOrder = document.createElement('p')
     let pokeHP = document.createElement('h5')
     pokeOrder.textContent = data.order 
