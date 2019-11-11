@@ -18,7 +18,10 @@ try {
 const theData = getAPIData('https://pokeapi.co/api/v2/pokemon')
 .then(data => {
     for (const pokemon of data.results) {
-        console.log(pokemon);
+        getAPIData(pokemon.url)
+        .then(pokeData => {
+           populateDOM(pokeData)
+        })
     }
 })
 
@@ -27,34 +30,32 @@ console.log(theData)
 
 let mainArea = document.querySelector('main')
 
-function populateDOM(pokeArray) {
-pokeArray.forEach((pokemon) => {
-    console.log(pokemon)
-    let pokeDiv = document.createElement('div', 'charDiv')
-    let name = document.createElement('h3')
-    let gender = document.createElement('p')
-    let pic = document.createElement('img', 'picDiv')
 
-    /*let pokenum = getPokeNumber(pokemon.url)*/
+function populateDOM(Single_pokemon) {
+    let pokeDiv = document.createElement('div')
+    let name = document.createElement('h3')
+    let pic = document.createElement('img')
+
+    pokeDiv.setAttribute('class', 'charDivs')
+    pic.setAttribute('class', 'picDivs')
+
+    let pokeNum = getPokeNumber(single_pokemon.id)
  
-    name.textContent = person.name
+    name.textContent = `${single_pokemon.name} height: ${single_pokemon.height}`
+   
 
     pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
 
-    personDiv.appendChild(name)
-    personDiv.appendChild(pic)
-    
-       mainArea.appendChild(pokeDiv)
+    pokeDiv.appendChild(pic)
+    pokeDiv.appendChild(name)
 
-})
+    mainArea.appendChild(pokeDiv)
+
 }
 
-function getPokeNumber(charURL) {
-    let end = charURL.lastIndexOf('/')
-    let charID = charURL.substring(end -2, end)
-    if(charID.indexOf('/') !== -1 ){
-        return `00${charID.slice(1,2)}`
-    } else {
-      return `0${charID}`
-    }
+function getPokeNumber(id) {
+    if(id < 10) return `00${id}`
+    if(id > 9 && id < 100) {
+        return `0${id}`
+    } else return id
 }
