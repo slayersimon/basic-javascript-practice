@@ -3,7 +3,7 @@ async function getAPIData(url) {
         const response = await fetch(url)
         const data = await response.json()
         return data 
-    } catch.error(error) {
+    } catch (error) {
         console.error(error)
     }
 }
