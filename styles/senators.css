@@ -8,3 +8,7 @@
         margin-bottom: 6rem;
     
 }
+
+figure img {
+    width: 200px;
+}
