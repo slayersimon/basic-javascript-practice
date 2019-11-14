@@ -1,4 +1,20 @@
 
+
+class pokemon {
+    constructor (id, name) {
+        this.id = id
+        this.name = name
+    }
+}
+
+const Sinnamon = new pokemon(900, 'Sinnamon')
+
+const newButton = document.querySelector('#newPokemon')
+newButton.addEventListener('click', function() {
+    populateDOM(Sinnamon)
+})
+
+
 async function getAPIData(url) {
 try {
     const response = await fetch(url)
@@ -18,6 +34,7 @@ const theData = getAPIData('https://pokeapi.co/api/v2/pokemon')
            populateDOM(pokedata)
         })
     }
+    
 })
 
 let mainArea = document.querySelector('main')
@@ -57,7 +74,7 @@ function fillCardFront(pokeFront, data) {
     pic.setAttribute('class', 'picDivs')
     let pokeNum = getPokeNumber(data.id)
     pokeFront.appendChild(name)
-    name.textContent = `${data.name} height: ${data.height}`
+    //name.textContent = `${data.name} height: ${data.height}`
 
     pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
 
@@ -70,8 +87,8 @@ function fillCardBack(pokeBack, data) {
     pokeBack.setAttribute('class', 'card_face card_face--back')
     let pokeOrder = document.createElement('p')
     let pokeHP = document.createElement('h5')
-    pokeOrder.textContent = data.order 
-    pokeHP.textContent = data.stats[0].base_stat
+    pokeOrder.textContent = `#${data.order} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
+    //pokeHP.textContent = data.stats[0].base_stat
     pokeBack.appendChild(pokeOrder)
     pokeBack.appendChild(pokeHP)
 }
@@ -90,3 +107,4 @@ function getPokeNumber(id) {
         return `0${id}`
     } else return id
 }
+
