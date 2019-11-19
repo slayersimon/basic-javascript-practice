@@ -75,3 +75,11 @@ main {
       font-size: 18px;
       line-height: 0px;
   }
+
+  #newPokemon {
+    width: 120px;
+    height: 80px;
+    background-color: #ffcd05;
+    font-size: 1.3 rem;
+    margin: 20px;
+  }

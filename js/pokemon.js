@@ -1,5 +1,6 @@
 
 
+
 class pokemon {
     constructor (id, name) {
         this.id = id
@@ -11,7 +12,14 @@ const Sinnamon = new pokemon(900, 'Sinnamon')
 
 const newButton = document.querySelector('#newPokemon')
 newButton.addEventListener('click', function() {
-    populateDOM(Sinnamon)
+    let pokeId = prompt("Please enter a pokemon id, you stud.");
+    if (pokeId > 0 && pokeId <= 807) {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(result => {
+        populateDOM(result)
+    })
+} else { 
+        alert('there are no Pokemon with that ID. Choose another one')
+ }
 })
 
 
@@ -76,7 +84,8 @@ function fillCardFront(pokeFront, data) {
     pokeFront.appendChild(name)
     //name.textContent = `${data.name} height: ${data.height}`
 
-    pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
+    //pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
+    pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
 
         
     pokeFront.appendChild(pic)
