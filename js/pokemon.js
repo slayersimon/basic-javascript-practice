@@ -14,6 +14,7 @@ class pokemon {
     constructor (id, name) {
         this.id = id
         this.name = name
+        // this.types = types
     }
 }
 
@@ -98,7 +99,7 @@ function populateDOM(single_pokemon) {
 
 
 function fillCardFront(pokeFront, data) {
-    pokeFront.setAttribute('class', 'card_face card_face--front')
+    pokeFront.setAttribute('class', 'card_face--front')
     let name = document.createElement('h3')
     let pic = document.createElement('img')
     pic.setAttribute('class', 'picDivs')
@@ -114,13 +115,14 @@ function fillCardFront(pokeFront, data) {
 }
 
 function fillCardBack(pokeBack, data) {
-    pokeBack.setAttribute('class', 'card_face card_face--back')
+    pokeBack.setAttribute('class', 'card_face--back')
     let pokeOrder = document.createElement('p')
     let pokeHP = document.createElement('h5')
     pokeOrder.textContent = `#${data.order} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
     pokeHP.textContent = "Base Hit Points: " + data.hp
     pokeBack.appendChild(pokeOrder)
     pokeBack.appendChild(pokeHP)
+    //pokeBack.appendChild(types)
 }
 
 
