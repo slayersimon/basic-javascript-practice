@@ -27,7 +27,7 @@ main {
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #CCC;
+    /*border: 1px solid #CCC;*/
     margin: 40px 0;
     perspective: 600px;
   }
@@ -39,6 +39,7 @@ main {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    background-color: thistle;
   }
   
   .card.is-flipped {
@@ -58,8 +59,9 @@ main {
   }
   
   .card__face--front {
-   /*  background: red; */
-   transform: rotateY(180deg);
+     background: red; 
+   /*transform: rotateY(180deg);*/
+   
   }
   
   .card__face--back {
@@ -70,12 +72,12 @@ main {
 
   p {
       position: absolute;
-      bottom: 10px;
+      bottom: 15px;
       left: 10px;
       margin: 0px;
       font-size: 18px;
       line-height: 0px;
-  }
+  } 
 
   #newPokemon {
     width: 120px;
@@ -85,11 +87,19 @@ main {
     margin: 20px;
   }
 
-  .body{
+  body{
     background-color: teal;
   }
 
-  h1, h3 {
+  h1, h4 {
     display: flex;
     justify-content: center;
+  }
+
+  h3 {
+    margin: 0px;
+  }
+
+  h5 {
+    margin: 10px;
   }

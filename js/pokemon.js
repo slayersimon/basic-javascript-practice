@@ -1,6 +1,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 class pokemon {
     constructor (id, name) {
         this.id = id
@@ -22,11 +31,24 @@ newButton.addEventListener('click', function() {
  }
 })
 
+function getHP(pokemonID) {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+    .then(pokemon => {
+        const HP = pokemon.stats.find(element => {
+            return element.stat.name === "hp"
+        })
+        return HP.base_stat
+    })
+}
+
 
 async function getAPIData(url) {
 try {
+    
     const response = await fetch(url)
     const data = await response.json()
+    const HP = await getHP(data.id)
+    data.hp = HP
     return data
 } catch (error) {
     console.error(error)
@@ -34,7 +56,7 @@ try {
 }
 
 //now use the reutrned async data
-const theData = getAPIData('https://pokeapi.co/api/v2/pokemon')
+const theData = getAPIData('https://pokeapi.co/api/v2/pokemon/?limit=25')
 .then(data => {
     for (const pokemon of data.results) {
         getAPIData(pokemon.url)
@@ -84,7 +106,6 @@ function fillCardFront(pokeFront, data) {
     pokeFront.appendChild(name)
     //name.textContent = `${data.name} height: ${data.height}`
 
-    //pic.src = `../images/${pokeNum}.png` //HEEEEEEEEEEEEEEEELP
     pic.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeNum}.png`
 
         
@@ -97,7 +118,7 @@ function fillCardBack(pokeBack, data) {
     let pokeOrder = document.createElement('p')
     let pokeHP = document.createElement('h5')
     pokeOrder.textContent = `#${data.order} ${data.name[0].toUpperCase()}${data.name.slice(1)}`
-    //pokeHP.textContent = data.stats[0].base_stat
+    pokeHP.textContent = "Base Hit Points: " + data.hp
     pokeBack.appendChild(pokeOrder)
     pokeBack.appendChild(pokeHP)
 }
