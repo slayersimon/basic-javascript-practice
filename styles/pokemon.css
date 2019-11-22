@@ -12,6 +12,12 @@ main {
     margin-bottom: 6rem;
 }
 
+
+#header {
+  background-color: rgb(50, 197, 190);
+  margin: 20px;
+}
+
 .picDivs { 
     width: 80%;
     padding: 20px;
@@ -98,9 +104,16 @@ main {
     background-color: teal;
   }
 
-  h1, h4 {
+  h1 {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+  }
+
+  h4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
 
   h3 {
