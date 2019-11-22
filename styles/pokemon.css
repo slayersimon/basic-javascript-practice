@@ -75,8 +75,8 @@ main {
   }
   
   .card__face--back {
-    background: blue;
-    /* backface-visibility: hidden; */
+    background: rgb(24, 187, 146);
+     backface-visibility: hidden; 
     height: 100%;
     
     transform: rotateY(180deg); 

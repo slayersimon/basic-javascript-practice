@@ -18,7 +18,7 @@ class pokemon {
     }
 }
 
-const Sinnamon = new pokemon('images\900.png', 'Sinnamon')
+const Sinnamon = new pokemon('/images/900.png', 'Sinnamon')
 
 const newButton2 = document.querySelector("#ultimatePokemon")
 newButton2.addEventListener('click', function() {
