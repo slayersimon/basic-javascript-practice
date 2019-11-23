@@ -75,7 +75,7 @@ main {
   }
   
   .card__face--back {
-    background: rgb(24, 187, 146);
+    background: rgb(38, 182, 146);
      backface-visibility: hidden; 
     height: 100%;
     
@@ -95,7 +95,7 @@ main {
   #newPokemon {
     width: 120px;
     height: 80px;
-    background-color: #ffcd05;
+    background-color: #2565a0;
     font-size: 1.3 rem;
     margin: 20px;
   }
