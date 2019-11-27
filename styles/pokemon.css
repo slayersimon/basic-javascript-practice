@@ -1,6 +1,6 @@
-/*body {
+body {
     background-color: #444;
-}*/
+}
 
 main {
     display: grid;
@@ -14,7 +14,7 @@ main {
 
 
 #header {
-  background-color: rgb(50, 197, 190);
+  background-color: rgb(202, 170, 29);
   margin: 20px;
 }
 
@@ -108,13 +108,13 @@ main {
   h1 {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 30px;
   }
 
   h4 {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    padding-bottom: 30px;
   }
 
   h3 {
