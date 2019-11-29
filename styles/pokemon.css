@@ -109,9 +109,10 @@ main {
     display: flex;
     justify-content: center;
     padding-top: 30px;
+  font-size: 3.0rem;
   }
 
-  h4 {
+  h2 {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
