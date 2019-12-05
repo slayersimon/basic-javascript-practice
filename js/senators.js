@@ -15,7 +15,7 @@ let republicans = []
 let democrats = []
 let independents = []
 
-const theData = getAPIData('senators.json').then(data => {
+const theData = getAPIData('../senators.json').then(data => {
     allSenators = data.results[0].members
     simpleSenators = makeSimpleMap(allSenators)
     republicans = filterSenators(simpleSenators, "R")
@@ -66,7 +66,7 @@ function oldestSenator(senatorList) {
     }, {})
 }
 
-function sortSenatorsByAge(seatorList) {
+function sortSenatorsByAge(senatorList) {
     senatorList.sort(function (a, b) {
         return a.age - b.age
     })
@@ -74,8 +74,9 @@ function sortSenatorsByAge(seatorList) {
 
 const container = document.querySelector('.container')
 
+console.log(container)
 function populateDOM(senator_array) {
-    senator_array.foreach(senator => {
+    senator_array.forEach(senator => {
         let card = document.createElement('div')
         card.setAttribute('class', 'card')
         let cardImage = document.createElement('div')
@@ -83,7 +84,7 @@ function populateDOM(senator_array) {
         let figure = document.createElement('figure')
         figure.setAttribute('class', 'image')
         let figureImage = document.createElement('img')
-        figureImage.src = `https://www.congress.gov/img/member/${senator.id.toLowerCase()}_200jpg`
+        figureImage.src = `https://www.congress.gov/img/member/${senator.id.toLowerCase()}_200.jpg`
         figureImage.alt = "Placeholder image"
 
         figure.appendChild(figureImage)
