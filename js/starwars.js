@@ -111,7 +111,8 @@ otherButton.addEventListener('click', () => {
 
 deleteNode()
 populateDOM(otherCharacters)
-}
+})
+
 console.log(otherCharacters)
 
 

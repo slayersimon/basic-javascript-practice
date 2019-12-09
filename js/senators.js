@@ -106,13 +106,13 @@ function cardContent(senator) {
     figure.setAttribute('class', 'image is-48x48')
     let img = document.createElement('img')
     if(senator.party === "R") {
-        img.src = `/imgages/elephant.png` //replace with your own image
+        img.src = `https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Republicanlogo.svg/2000px-Republicanlogo.svg.png` //replace with your own image
     }
     if(senator.party === "D") {
-        img.src = `/imgages/donkey.png` //replace with your own image
+        img.src = `https://images.squarespace-cdn.com/content/v1/54408693e4b0726a1e407dc3/1418671809992-MY1BF7VM9YWV1FBG5393/ke17ZwdGBToddI8pDm48kCNAPivMlxN7TdepmFucfj5Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxoj0cJlVly2rHgUgol_R3VhOI4sWMLgH8T62Lgl4vzoRJz3vG5XmvimfQUMWDvFig/Democratic+Donkey.png` //replace with your own image
     }
     if(senator.party === "ID") {
-        img.src = `/imgages/somethingelse.png` //replace with your own image
+        img.src = `https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/loudly-crying-face.png` //replace with your own image
     }
 
     img.alt = 'Placeholder image'
